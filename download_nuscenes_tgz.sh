@@ -15,14 +15,15 @@
 train_list=("v1.0-mini"
             )
 
-target_dir = "~/data"
+target_dir=~/data
+mkdir -p ${target_dir}
 cd ${target_dir}
 
 for sequence in ${train_list[@]}; do
     tgz_file=${sequence}.tgz
-    wget https://s3.amazonaws.com/argoai-argoverse/${tar_file}
+    wget "https://s3.amazonaws.com/data.nuscenes.org/public/v1.0/${tgz_file}?AWSAccessKeyId=AKIA6RIK4RRMFUKM7AM2&Signature=03jADR95AFaXP0YUQedrqZzYaps%3D&Expires=1636880372" - O ${tgz_file}
     mkdir -p ${target_dir}/nuscenes/${sequence}
     tar zxvf ${tgz_file} -C ${target_dir}/nuscenes/${sequence} 
-    rm ${zip_file}
+    #rm ${tgz_file}
 done
 
