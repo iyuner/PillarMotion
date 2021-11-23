@@ -19,13 +19,9 @@ cd tools/optical_flow/correlation_package
 python setup.py build install
 cd ../..
 python tools/create_data.py nuscenes --root-path data/nuscenes/ --version v1.0-mini \
-    --out-dir data/nuscenes/motion_mini --max-sweeps 5 --extra-tag nus_5_sweep
+    --out-dir data/nuscenes/motion_mini --max-sweeps 5 --extra-tag nus_5_sweeps
 
 # train the network
-tools/train.py
-    configs/motionnet/motionnet_02pillar_stpn_cyclic_nus.py \
-    --cfg-options data.samples_per_gpu=1 data.workers_per_gpu=0
-
 python tools/train.py \
     configs/motionnet/motionnet_02pillar_stpn_cyclic_nus.py \
     --cfg-options data.samples_per_gpu=1 data.workers_per_gpu=0
