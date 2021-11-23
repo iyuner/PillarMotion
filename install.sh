@@ -54,5 +54,7 @@ pip install --no-cache-dir -e .
 pip uninstall pycocotools 
 pip install pycocotools --no-cache-dir --no-binary :all:
 
+pip install pypng open3d
+
 # then good!
 conda clean --all --yes
