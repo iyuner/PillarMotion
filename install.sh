@@ -62,5 +62,9 @@ pip install pycocotools --no-cache-dir --no-binary :all:
 
 pip install pypng open3d
 
+pip install chamferdist
+cd tools/optical_flow/correlation_package
+python setup.py build install
+cd ../../
 # then good!
 conda clean --all --yes
