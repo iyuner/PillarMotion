@@ -39,10 +39,8 @@ git clone https://github.com/open-mmlab/mmdetection3d.git
 cd mmdetection3d
 export FORCE_CUDA="1"
 
-# case 1, normal gpu on your desktop
+# case 1, normal gpu on your desktop. You many need to install cudatoolkit-dev
 # conda install -c conda-forge cudatoolkit-dev
-
-#pip install -r requirements/build.txt
 
 # case 2, moria cluster
 # not work in moria, fail with error:
