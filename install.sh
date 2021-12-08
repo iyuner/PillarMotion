@@ -38,8 +38,13 @@ git clone https://github.com/open-mmlab/mmdetection3d.git
 
 cd mmdetection3d
 export FORCE_CUDA="1"
+
+# case 1, normal gpu on your desktop
+# conda install -c conda-forge cudatoolkit-dev
+
 #pip install -r requirements/build.txt
 
+# case 2, moria cluster
 # not work in moria, fail with error:
 # raise EnvironmentError('CUDA_HOME environment variable is not set. '
 # OSError: CUDA_HOME environment variable is not set. Please set it to your CUDA install root.
@@ -50,6 +55,7 @@ export FORCE_CUDA="1"
 # according to this, https://github.com/open-mmlab/mmdetection3d/blob/01e642fcaa93708abcb060c3bd3625d6bc0bf557/docs/faq.md
 salloc --gres=gpu:1 --mem=2GB --cpus-per-task=4 --constrain=balrog
 conda activate PillarMotion
+
 pip install --no-cache-dir -e .
 #pip install -e "git+https://github.com/cocodataset/cocoapi#egg=pycocotools&subdirectory=PythonAPI"
 #Source : https://github.com/cocodataset/cocoapi/issues/509
