@@ -68,7 +68,7 @@ pip install pycocotools --no-cache-dir --no-binary :all:
 
 pip install pypng open3d
 
-pip install chamferdist
+pip install chamferdist # if this causes error druing import, try to build again from source.
 cd tools/optical_flow/correlation_package
 python setup.py build install
 cd ../../
