@@ -13,11 +13,17 @@ conda activate PillarMotion
 # conda install -y pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.1 -c pytorch
 conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.2 -c pytorch
 
+## for my 3070Ti, which needs cuda higher than 11.1. I use below instead
+# conda install pytorch==1.10.0 torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
 # install mmcv 1.3.9, which suitable for the torch and cuda versions
 # pip install mmcv-full==1.3.9 -f https://download.openmmlab.com/mmcv/dist/cu102/torch1.8.0/index.html
 #pip install mmcv-full==1.3.13 -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.6.0/index.html
 # pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.7.0/index.html
 pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu102/torch1.7.0/index.html
+
+## for my 3070Ti, I use below instead
+# pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.10.0/index.html
 
 # install mmdetection 2.16.0
 # pip install mmdet==2.16.0
@@ -39,7 +45,7 @@ git clone https://github.com/open-mmlab/mmdetection3d.git
 cd mmdetection3d
 export FORCE_CUDA="1"
 
-# case 1, normal gpu on your desktop. You many need to install cudatoolkit-dev
+# case 1, normal gpu on your desktop. Error raise EnvironmentError('CUDA_HOME environment variable is not set. '. You many need to install cudatoolkit-dev
 # conda install -c conda-forge cudatoolkit-dev
 
 # case 2, moria cluster
