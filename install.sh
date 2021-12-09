@@ -46,7 +46,7 @@ cd mmdetection3d
 export FORCE_CUDA="1"
 
 # case 1, normal gpu on your desktop. Error raise EnvironmentError('CUDA_HOME environment variable is not set. '. You many need to install cudatoolkit-dev
-# conda install -c conda-forge cudatoolkit-dev
+# conda install -c conda-forge cudatoolkit-dev=11.3
 
 # case 2, moria cluster
 # not work in moria, fail with error:
